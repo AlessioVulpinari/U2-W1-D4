@@ -8,3 +8,64 @@
 7 ritardare progressivamente l'animazione delle altre 2 parole 
 */
 
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+#testoAlternato {
+  display: inline-block;
+  margin-top: 10vh;
+  padding: 1rem;
+  margin-left: 2rem;
+  border: 3px solid grey;
+  width: 520px;
+}
+
+.parole i {
+  position: absolute;
+  color: grey;
+  font-size: 1.8rem;
+  opacity: 0;
+  top: 0;
+}
+
+.parole {
+  position: relative;
+}
+
+.parole i:first-of-type {
+  opacity: 0;
+  animation: changeColor 12s 0s infinite;
+}
+.parole i:nth-of-type(2) {
+  opacity: 0;
+  animation: changeColor 12s 4s infinite;
+}
+.parole i:last-of-type {
+  opacity: 0;
+  animation: changeColor 12s 8s infinite;
+}
+
+@keyframes changeColor {
+  from {
+    top: -10px;
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  to {
+    top: 0px;
+    opacity: 0;
+  }
+}
